@@ -5,4 +5,4 @@ Provides the foundation for manipulating ldap
 taking a highly object oriented approach.
 
 
-Use the provided object types or override them.
+Use the provided object types, override them, or create your own.
