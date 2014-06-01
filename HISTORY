@@ -1,2 +1,14 @@
-June 1, 2014
-Created the base ldap object
+0.0.1 (05/01/2014)
+-------------------
+
+* Created the base ldap object
+
+0.0.2 (05/01/2014)
+------------------
+
+* fixed some pypi settings
+
+0.0.3 (05/01/2014)
+------------------
+
+* more pypi settings
