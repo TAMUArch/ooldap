@@ -7,5 +7,4 @@ setup(
     url='http://github.com/TAMUArch/ooldap',
     author='John',
     author_email='st_jphillips@tamu.edu',
-    description='Object Oriented Python LDAP'
 )
