@@ -5,6 +5,7 @@ import os
 import ldap
 
 from ooldap import exceptions, Connection
+from ooldap.objects import Group
 
 
 URI = os.environ['LDAP_CONNECTION_URI']
@@ -12,7 +13,7 @@ BIND_DN = os.environ['LDAP_CONNECTION_DN']
 PASSWORD = os.environ['LDAP_CONNECTION_PASSWORD']
 
 
-log = getLogger('ooldap.objects')
+log = getLogger('ooldap.foundation')
 
 
 class LDAPObject(object):
@@ -39,10 +40,32 @@ class LDAPObject(object):
             raise exceptions.MultipleObjectsFound
         return data[0][1]
 
+    def get_attribute(self, attribute):
+        if not self.data:
+            return None
+        if attribute not in self.data:
+            return None
+
+        attribute = self.data[attribute]
+        if len(attribute) == 1:
+            return attribute[0]
+
+        return attribute
+
+    @propery
+    def cn(self):
+        return self.get_attribute('cn')
+
     @property
     def memberOf(self):
-        if not self.data:
-            return []
-        if 'memberOf' not in self.data:
-            return []
-        return self.data['memberOf']
+        return self.get_attribute('memberOf')
+
+    @property
+    def description(self):
+        return self.get_attribute('description')
+
+    def add_to_group(self, group):
+        group.add_member(self)
+
+    def remove_from_group(self, group):
+        group.remove_member(self)

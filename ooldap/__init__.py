@@ -1,6 +1,10 @@
 import ldap
 
 
+GLOBAL_GROUP = '-2147483646'
+UNIVERSAL_GROUP = '-2147483640'
+
+
 class Connection(object):
     def __init__(self, uri, dn, password):
         self.uri = uri
