@@ -3,7 +3,7 @@ from distutils.core import setup
 from setuptools import find_packages
 
 
-version = '0.0.3'
+version = '0.0.4'
 
 setup(
     name='ooldap',
@@ -13,4 +13,5 @@ setup(
     author='John',
     author_email='st_jphillips@tamu.edu',
     description='Object Oriented LDAP',
+    license='http://www.apache.org/licenses/LICENSE-2.0',
 )
