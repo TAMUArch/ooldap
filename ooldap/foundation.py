@@ -7,17 +7,16 @@ import ldap
 from ooldap import exceptions, Connection
 
 
-URI = os.environ['LDAP_CONNECTION_URI']
-BIND_DN = os.environ['LDAP_CONNECTION_DN']
-PASSWORD = os.environ['LDAP_CONNECTION_PASSWORD']
-
-
 log = getLogger('ooldap.foundation')
 
 
 class LDAPObject(object):
 
-    def __init__(self, dn, uri=URI, bind_dn=BIND_DN, password=PASSWORD):
+    def __init__(self,
+                 dn,
+                 uri=os.environ['LDAP_CONNECTION_URI'],
+                 bind_dn=os.environ['LDAP_CONNECTION_DN'],
+                 password=PASSWORD=os.environ['LDAP_CONNECTION_PASSWORD']):
         self.dn = dn
         assert dn
         self.connection = Connection(uri, bind_dn, password)
