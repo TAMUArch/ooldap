@@ -31,11 +31,11 @@ class LDAPObject(object):
         type, data = self.connection.stream.result(result_id, 10)
         self.connection.unbind()
         if len(data) == 0:
-            log.error('%s not found in ldap' % self.dn)
             raise exceptions.ObjectNotFound
+            return None
         if len(data) > 1:
-            log.error('%s found multiple users in ldap' % self.dn)
             raise exceptions.MultipleObjectsFound
+            return None
         return data[0][1]
 
     def get_attribute(self, attribute):
