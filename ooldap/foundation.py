@@ -16,11 +16,11 @@ log = getLogger('ooldap.foundation')
 
 
 class LDAPObject(object):
-    connection = Connection(URI, BIND_DN, PASSWORD)
 
-    def __init__(self, dn):
+    def __init__(self, dn, uri=URI, bind_dn=BIND_DN, password=PASSWORD):
         self.dn = dn
         assert dn
+        self.connection = Connection(uri, bind_dn, password)
 
     @property
     def data(self):
