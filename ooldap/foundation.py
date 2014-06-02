@@ -16,7 +16,7 @@ class LDAPObject(object):
                  dn,
                  uri=os.environ['LDAP_CONNECTION_URI'],
                  bind_dn=os.environ['LDAP_CONNECTION_DN'],
-                 password=PASSWORD=os.environ['LDAP_CONNECTION_PASSWORD']):
+                 password=os.environ['LDAP_CONNECTION_PASSWORD']):
         self.dn = dn
         assert dn
         self.connection = Connection(uri, bind_dn, password)
