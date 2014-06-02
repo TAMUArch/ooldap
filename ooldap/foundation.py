@@ -5,7 +5,6 @@ import os
 import ldap
 
 from ooldap import exceptions, Connection
-from ooldap.objects import Group
 
 
 URI = os.environ['LDAP_CONNECTION_URI']
@@ -63,9 +62,3 @@ class LDAPObject(object):
     @property
     def description(self):
         return self.get_attribute('description')
-
-    def add_to_group(self, group):
-        group.add_member(self)
-
-    def remove_from_group(self, group):
-        group.remove_member(self)
