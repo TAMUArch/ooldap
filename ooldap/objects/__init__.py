@@ -10,10 +10,7 @@ log = getLogger('ooldap.objects')
 
 
 class Group(LDAPObject):
-    def __init__(self, scope=GLOBAL_GROUP):
-        self.scope = scope
-
-    def create(self, name):
+    def create(self, name, scope=GLOBAL_GROUP):
         attr = {}
         attr['objectClass'] = ['group', 'top']
         attr['groupType'] = self.scope
@@ -37,7 +34,7 @@ class Group(LDAPObject):
 
     @property
     def members(self):
-        return self.get_attribute('members')
+        return self.get_attribute('member')
 
     def add_member(self, new_member):
         self.connection.bind()

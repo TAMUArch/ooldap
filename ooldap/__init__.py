@@ -13,7 +13,7 @@ class Connection(object):
         assert uri and dn and password
 
     def bind(self):
-        self.stream = ldap.initialize(uri)
+        self.stream = ldap.open(self.uri)
         self.stream.simple_bind_s(self.dn, self.password)
 
     def unbind(self):

@@ -51,7 +51,7 @@ class LDAPObject(object):
 
         return attribute
 
-    @propery
+    @property
     def cn(self):
         return self.get_attribute('cn')
 
