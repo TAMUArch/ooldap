@@ -43,3 +43,9 @@
 ------------------
 
 * cleaned up exception handling
+
+0.1.0 (06/02/2014)
+------------------
+
+* Major release
+* Can add and remove LDAPObjects from Groups
