@@ -1,13 +1,8 @@
-from logging import getLogger
-
 import os
 
 import ldap
 
-from ooldap import exceptions, Connection
-
-
-log = getLogger('ooldap.foundation')
+from ooldap import Connection
 
 
 class LDAPObject(object):
@@ -31,11 +26,10 @@ class LDAPObject(object):
         type, data = self.connection.stream.result(result_id, 10)
         self.connection.unbind()
         if len(data) == 0:
-            raise exceptions.ObjectNotFound
+            raise ldap.NO_RESULTS_RETURNED
             return None
         if len(data) > 1:
-            raise exceptions.MultipleObjectsFound
-            return None
+            raise ldap.RESULTS_TOO_LARGE
         return data[0][1]
 
     def get_attribute(self, attribute):
