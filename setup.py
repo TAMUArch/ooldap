@@ -14,4 +14,5 @@ setup(
     author_email='johnphillips@arch.tamu.edu',
     description='Object Oriented LDAP',
     license='Apache License 2.0',
+    install_requires='2.7.5',
 )
