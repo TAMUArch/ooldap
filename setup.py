@@ -3,7 +3,7 @@ from distutils.core import setup
 from setuptools import find_packages
 
 
-version = '0.0.5'
+version = '0.0.6'
 
 setup(
     name='ooldap',
@@ -11,7 +11,7 @@ setup(
     packages=find_packages(),
     url='http://github.com/TAMUArch/ooldap',
     author='John',
-    author_email='st_jphillips@tamu.edu',
+    author_email='johnphillips@arch.tamu.edu',
     description='Object Oriented LDAP',
     license='Apache License 2.0',
 )
