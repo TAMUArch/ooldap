@@ -5,7 +5,7 @@ from distutils.core import setup
 from setuptools import find_packages
 
 
-version = '0.0.8'
+version = '0.0.9'
 
 setup(
     name='ooldap',
@@ -16,6 +16,5 @@ setup(
     author_email='johnphillips@arch.tamu.edu',
     description='Object Oriented LDAP',
     license='Apache License 2.0',
-    long_description = open(join(dirname(__file__), 'README.md')).read() + "\n" + 
-                       open(join(dirname(__file__), 'HISTORY.rst')).read(),
+    long_description = open(join(dirname(__file__), 'README.md')).read(),
 )

@@ -38,3 +38,8 @@
 
 * metadata
 * flexibility with connection credentials
+
+0.0.9 (06/01/2014)
+------------------
+
+* cleaned up exception handling
