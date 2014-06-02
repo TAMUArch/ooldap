@@ -32,3 +32,9 @@
 ------------------
 
 * worked out bugs
+
+0.0.8 (06/01/2014)
+------------------
+
+* metadata
+* flexibility with connection credentials
