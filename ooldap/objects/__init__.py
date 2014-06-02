@@ -24,6 +24,7 @@ class Group(LDAPObject):
         return self.get_attribute('member')
 
     def add_member(self, new_member):
+        assert isinstance(new_member, LDAPObject)
         self.connection.bind()
         self.connection.stream.modify_s(self.dn,
                     [(ldap.MOD_ADD, 'member', str(new_member.dn))])
