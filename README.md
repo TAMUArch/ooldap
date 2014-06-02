@@ -1,4 +1,4 @@
-Using the python-ldap library: python-ldap.com
+Using the python-ldap library: http://www.python-ldap.org/
 
 
 Provides the foundation for manipulating ldap
